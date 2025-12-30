@@ -52,17 +52,6 @@ jobs:
           mkdir -p artifacts
           cp build/windows/amd64/SunnyNetTools.exe artifacts/
 
-      - name: Prepare artifacts (macOS)
-        if: matrix.os == 'macos-latest'
-        run: |
-          mkdir -p artifacts
-          cp -r build/darwin/amd64/SunnyNetTools.app artifacts/
-
-      - name: Prepare artifacts (Linux)
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          mkdir -p artifacts
-          cp build/linux/amd64/SunnyNetTools artifacts/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
